@@ -5,10 +5,6 @@ on:
     branches:
       - master
 
-permissions:
-  contents: read
-  packages: write
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -31,14 +27,14 @@ jobs:
       - name: Log in to Docker registry
         env:
           KAMAL_REGISTRY_USERNAME: ${{ github.repository_owner }}
-          KAMAL_REGISTRY_PASSWORD: ${{secrets.GITHUB_TOKEN}}
+          KAMAL_REGISTRY_PASSWORD: ${{secrets.GHCR_TOKEN}}
 
         run: |
           echo "${KAMAL_REGISTRY_PASSWORD}" | docker login ghcr.io -u "${KAMAL_REGISTRY_USERNAME}" --password-stdin
 
       - name: Build and Push with Kamal
         env:
-          KAMAL_REGISTRY_PASSWORD: ${{secrets.GITHUB_TOKEN}}
+          KAMAL_REGISTRY_PASSWORD: ${{secrets.GHCR_TOKEN}}
           KAMAL_SSH_KEY: ${{ secrets.KAMAL_SSH_KEY }}
 
         run: |
