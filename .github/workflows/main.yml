@@ -30,7 +30,7 @@ jobs:
 
       - name: Log in to Docker registry
         env:
-          KAMAL_REGISTRY_USERNAME: ${{github.actor}}
+          KAMAL_REGISTRY_USERNAME: ${{ github.repository_owner }}
           KAMAL_REGISTRY_PASSWORD: ${{secrets.GITHUB_TOKEN}}
 
         run: |
