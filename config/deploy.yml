@@ -54,10 +54,10 @@ builder:
 #   shell: app exec --interactive --reuse "bash"
 
 # Use a different ssh user than root
-#
-# ssh:
-#   user: app
 
+ssh:
+  user: root
+  key_data: [KAMAL_SSH_KEY]
 # Use a persistent storage volume.
 #
 # volumes:
