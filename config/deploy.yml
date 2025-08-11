@@ -55,10 +55,8 @@ builder:
 
 # Use a different ssh user than root
 
-ssh:
-  user: root
-  key_data: |
-    <%= ENV.fetch("KAMAL_SSH_KEY", "").gsub("\\n", "\n") %>
+# ssh:
+#   user: root
 
 # Use a persistent storage volume.
 #
