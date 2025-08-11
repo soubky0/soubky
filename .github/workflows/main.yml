@@ -38,5 +38,4 @@ jobs:
           KAMAL_SSH_KEY: ${{ secrets.KAMAL_SSH_KEY }}
 
         run: |
-          kamal build
           kamal deploy

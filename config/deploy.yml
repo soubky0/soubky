@@ -57,7 +57,9 @@ builder:
 
 ssh:
   user: root
-  key_data: [KAMAL_SSH_KEY]
+  key_data: |
+    <%= ENV.fetch("KAMAL_SSH_KEY", "").gsub("\\n", "\n") %>
+
 # Use a persistent storage volume.
 #
 # volumes:
