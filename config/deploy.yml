@@ -79,10 +79,11 @@ builder:
 #
 accessories:
   jellyfin:
+    host: 148.230.110.203
+    port: 8096
     proxy:
       host: jellyfin.soubky.com
       ssl: true
-      target: "http://localhost:8096"
 #   db:
 #     image: mysql:8.0
 #     host: 192.168.0.2
