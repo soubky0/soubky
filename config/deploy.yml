@@ -84,6 +84,21 @@ accessories:
     proxy:
       host: jellyfin.soubky.com
       ssl: true
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    host: 148.230.110.203
+    port: 8080
+    volumes:
+      - "/mnt/data/qbittorrent/config:/config"
+      - "/mnt/data/qbittorrent/downloads:/downloads"
+    env:
+      clear:
+        PUID: 1000
+        PGID: 1000
+        TZ: "Africa/Cairo"
+    proxy:
+      host: torrent.soubky.com
+      ssl: true
 #   db:
 #     image: mysql:8.0
 #     host: 192.168.0.2
