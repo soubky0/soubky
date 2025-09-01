@@ -77,7 +77,12 @@ builder:
 
 # Use accessory services (secrets come from .kamal/secrets).
 #
-# accessories:
+accessories:
+  jellyfin:
+    proxy:
+      host: jellyfin.soubky.com
+      ssl: true
+      target: "http://localhost:8096"
 #   db:
 #     image: mysql:8.0
 #     host: 192.168.0.2
